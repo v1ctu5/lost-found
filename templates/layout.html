@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>College Lost & Found</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<style>
+
+/* Make page full height */
+html, body{
+height:100%;
+margin:0;
+}
+
+/* Flex layout */
+body{
+display:flex;
+flex-direction:column;
+}
+
+/* Main content area grows */
+.main-content{
+flex:1;
+}
+
+/* Footer styling */
+footer{
+background:#f8f9fa;
+text-align:center;
+padding:12px;
+border-top:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+
+<div class="container">
+
+<a class="navbar-brand">LOST & FOUND SYSTEM</a>
+
+<div>
+
+<a href="/dashboard" class="btn btn-outline-light btn-sm">Dashboard</a>
+
+<a href="/items" class="btn btn-outline-light btn-sm">Items</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+<div class="container mt-4">
+
+{% block content %}
+{% endblock %}
+
+</div>
+</div>
+
+
+<footer>
+<p> © 2026 Lost & Found System | By <b>Shaheem Ullattil</b> | BCA Project</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row text-center mb-4">
+
+<div class="col-md-3">
+<div class="card bg-primary text-white p-3">
+<h5>Total Items</h5>
+<h3>{{total}}</h3>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card bg-danger text-white p-3">
+<h5>Lost</h5>
+<h3>{{lost}}</h3>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card bg-warning text-white p-3">
+<h5>Found</h5>
+<h3>{{found}}</h3>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card bg-success text-white p-3">
+<h5>Returned</h5>
+<h3>{{returned}}</h3>
+</div>
+</div>
+
+</div>
+
+
+<div class="card p-4">
+
+<h5>Add Item</h5>
+
+<form method="post">
+
+<input class="form-control mb-3" name="college_id" placeholder="College ID">
+
+<input class="form-control mb-3" name="item_name" placeholder="Item Name">
+
+<input class="form-control mb-3" name="location" placeholder="Location">
+
+<select class="form-control mb-3" name="type">
+<option value="lost">Lost</option>
+<option value="found">Found</option>
+</select>
+
+<button class="btn btn-success">Submit</button>
+
+</form>
+
+</div>
+
+{% endblock %}

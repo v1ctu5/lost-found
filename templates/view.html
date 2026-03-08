@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3 class="mb-4">Items List</h3>
+
+
+<form action="/search" method="post" class="mb-3">
+
+<div class="input-group">
+
+<input class="form-control" name="keyword"
+placeholder="Search by Item or College ID">
+
+<button class="btn btn-primary">Search</button>
+
+</div>
+
+</form>
+
+
+<div class="card">
+
+<table class="table table-striped">
+
+<tr>
+<th>ID</th>
+<th>College ID</th>
+<th>Item</th>
+<th>Location</th>
+<th>Type</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for i in items %}
+
+<tr>
+
+<td>{{i[0]}}</td>
+<td>{{i[1]}}</td>
+<td>{{i[2]}}</td>
+<td>{{i[3]}}</td>
+<td>{{i[4]}}</td>
+
+<td>
+
+{% if i[5] == "Returned" %}
+
+<span class="badge bg-success">Returned</span>
+
+{% else %}
+
+<span class="badge bg-danger">Not Returned</span>
+
+{% endif %}
+
+</td>
+
+<td>
+
+{% if i[5] != "Returned" %}
+
+<a href="/return/{{i[0]}}" class="btn btn-success btn-sm">
+Mark Returned
+</a>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}
